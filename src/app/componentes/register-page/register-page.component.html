@@ -2,29 +2,17 @@
     <div class="col-md-6 mx-auto ">
         <div class="card text-center">
           <div class="card-body">
-              <form>
+              <form (submit)="onSubmitAddUser()">
                   <h1>Crear usuario</h1>
                   <div class="form-group">
-                      <label for="Nombre">Nombres:</label>
-                      <input type="text" class="form-control" id="Nombre" aria-describedby="emailHelp" placeholder="Nombre">
+                    <label>Correo:</label>
+                    <input type="email" class="form-control"  placeholder="Correo" [(ngModel)]="email" name="email">
                   </div>
                   <div class="form-group">
-                      <label for="Nombre">Apellidos:</label>
-                      <input type="text" class="form-control" id="Nombre" aria-describedby="emailHelp" placeholder="Apellido">
+                    <label>Contraseña:</label>
+                    <input type="password" name="password" id="Contraseña" [(ngModel)]="password" class="form-control" placeholder="contraseña"  >
                   </div>
-                  <div class="form-group">
-                    <label for="Correo">Correo:</label>
-                    <input type="email" class="form-control" id="Correo" aria-describedby="emailHelp" placeholder="Correo">
-                  </div>
-                  <div class="form-group">
-                    <label for="Contraseña">Contraseña:</label>
-                    <input type="password" class="form-control" id="Contraseña" placeholder="Contraseña" required type="password">
-                  </div>
-                  <div class="form-group">
-                      <label for="confirContraseña">Confirmar contraseña:</label>
-                      <input type="password" class="form-control" id="confirContraseña" placeholder="Confirmar contraseña:" required type="password">
-                  </div>
-                  <button type="submit" class="btn btn-primary">Crear usuario</button>
+                  <input type="submit" value="Crear Usuario" class="btn btn-primary btn-block btn-lg">
               </form>
           </div>
         </div>
