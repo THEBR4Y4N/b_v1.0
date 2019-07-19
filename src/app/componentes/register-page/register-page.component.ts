@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../servicios/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-registerpage',
@@ -11,7 +12,8 @@ export class RegisterpageComponent implements OnInit {
   public password:string;
 
   constructor(
-    public authService:AuthService
+    public authService:AuthService,
+    public router:Router
 
   ) { }
 
@@ -21,8 +23,8 @@ export class RegisterpageComponent implements OnInit {
   onSubmitAddUser(){
     this.authService.registerUser(this.email,this.password)
     .then((res)=>{
-      console.log('Creado');
-      console.log(res);
+      this.router.navigate(['/'])
+
     }).catch((err)=>{
       console.log('Error al Crear');
       console.log(err);
